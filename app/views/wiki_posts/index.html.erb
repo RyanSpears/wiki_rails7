@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="flex flex-col gap-4">
+    <div>
+        <h1 class="text-3xl font-bold underline">Wiki Posts</h1>
+    </div>
+
+    <table class="table-auto">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <div id="wiki_posts">
+          <% @wiki_posts.each do |wiki_post| %>
+          <tr>
+            <td><%= wiki_post.title %></td>
+            <td><%= link_to "Show", wiki_post, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %></td>
+          </tr>
+          <% end %>
+        </div>
+      </tbody>
+    </table>
+
+    <%= link_to "New", new_wiki_post_path, class: "bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" %>
+</div>

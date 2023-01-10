@@ -1,0 +1,10 @@
+<div id="<%= dom_id wiki_post %>">
+
+<h1><%= wiki_post.title %></h1>
+<p><%= wiki_post.description %></p>
+<% if wiki_post.image.attached? %>
+    <p><%= image_tag wiki_post.image %></p>
+<% end %>
+<p><%= wiki_post.meta %></p>
+
+</div>
