@@ -1,7 +1,10 @@
-<h1>Login</h1>
-<form action="/users/login" method="POST">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
-    <input type="text" name="username">
-    <input type="password" name="password">
-    <button type="submit">Submit</button>
-</form>
+
+<div>
+    <h1 class="text-3xl font-bold underline pb-10">Login</h1>
+    <form action="/users/login" method="POST" class="flex flex-col grow gap-y-5">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+        <div><input type="text" name="username"></div>
+        <div><input type="password" name="password"></div>
+        <div><button type="submit" class="bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" >Submit</button></div>
+    </form>
+</div>

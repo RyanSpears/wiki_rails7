@@ -1,28 +1,40 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="flex flex-col gap-4">
+<div class="flex flex-col grow">
     <div>
         <h1 class="text-3xl font-bold underline">Wiki Posts</h1>
     </div>
 
-    <table class="table-auto">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <div id="wiki_posts">
-          <% @wiki_posts.each do |wiki_post| %>
-          <tr>
-            <td><%= wiki_post.title %></td>
-            <td><%= link_to "Show", wiki_post, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %></td>
-          </tr>
-          <% end %>
+    <div class="flex flex-col grow" style="width:100%">
+      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+          <div class="overflow-hidden">
+            <table class="min-w-full">
+              <thead class="border-b">
+                <tr>
+                  <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    Title
+                  </th>
+                  <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @wiki_posts.each do |wiki_post| %>
+                  <tr class="border-b">
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= wiki_post.title %></td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><%= link_to "Show", wiki_post, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
-      </tbody>
-    </table>
+      </div>
+    </div>
 
-    <%= link_to "New", new_wiki_post_path, class: "bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" %>
-</div>
+    <div class="flex flex-row">
+      <%= link_to "New", new_wiki_post_path, class: "bg-green-700 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full" %>
+    </div>
+ </div>

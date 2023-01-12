@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         if @auth
           p "You've signed in."
           p @auth
+          redirect_to welcome_index_path
           return
         end
       end

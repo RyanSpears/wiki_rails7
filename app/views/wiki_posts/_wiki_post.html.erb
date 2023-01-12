@@ -1,10 +1,8 @@
-<div id="<%= dom_id wiki_post %>">
-
-<h1><%= wiki_post.title %></h1>
-<p><%= wiki_post.description %></p>
-<% if wiki_post.image.attached? %>
-    <p><%= image_tag wiki_post.image %></p>
-<% end %>
-<p><%= wiki_post.meta %></p>
-
+<div id="<%= dom_id wiki_post %>" class="flex flex-col grow gap-y-5">
+    <h1 class="text-3xl font-bold underline pb-10"><%= wiki_post.title %></h1>
+    <div><%= wiki_post.description %></div>
+    <% if wiki_post.image.attached? %>
+        <div><%= image_tag wiki_post.image %></div>
+    <% end %>
+    <div><%= wiki_post.meta %></div>
 </div>
