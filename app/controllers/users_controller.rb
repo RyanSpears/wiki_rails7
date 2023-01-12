@@ -1,23 +1,24 @@
 class UsersController < ApplicationController
+  skip_before_action :authorized
+
   def login
     if params["username"]
       user = User.find_by_username(params["username"])
 
       if !user.nil?
-        p 'Found user ' + user.username
+        @valid = user.authenticate(params["password"])
 
-        @auth = user.authenticate(params["password"])
-
-        if @auth
-          p "You've signed in."
-          p @auth
+        if @valid
+          session[:user_id] = user.id
           redirect_to welcome_index_path
           return
         end
       end
-
-      p "Login failed."
     end
+  end
+
+  def logout
+    session[:user_id] = nil
   end
 
   def index

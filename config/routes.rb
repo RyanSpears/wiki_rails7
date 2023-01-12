@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "users/create"
   get "users/login"
   post "users/login"
+  get "users/logout"
   get "welcome/index"
   get "welcome/about"
   get "about", to: redirect("/welcome/about")
