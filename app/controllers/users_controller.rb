@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         
         if @valid
           session[:user_id] = user.id
-          redirect_to welcome_index_path
+          redirect_to wiki_posts_path
           return
         end
       end
