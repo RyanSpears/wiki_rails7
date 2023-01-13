@@ -2,8 +2,8 @@
 
 <%= render @wiki_post %>
 
-<div class="flex flex-row grow gap-x-5 pt-10">
-  <%= link_to "Edit this wiki post", edit_wiki_post_path(@wiki_post), class: "bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full" %>
-  <%= link_to "Back to wiki posts", wiki_posts_path, class: "bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full" %>
-  <%= button_to "Destroy this wiki post", @wiki_post, method: :delete, class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full" %>
+<div class="flex flex-row grow gap-x-5 py-10">
+  <%= link_to "Edit this wiki post", edit_wiki_post_path(@wiki_post), class: "rjs-button-submit" %>
+  <%= link_to "Back to wiki posts", wiki_posts_path, class: "rjs-button-back" %>
+  <%= button_to "Destroy this wiki post", @wiki_post, method: :delete, class: "rjs-button-warning" %>
 </div>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authorized
+  skip_before_action :authorized, only: [:login, :logout]
 
   def login
     if params["username"]
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 
       if !user.nil?
         @valid = user.authenticate(params["password"])
-
+        
         if @valid
           session[:user_id] = user.id
           redirect_to welcome_index_path

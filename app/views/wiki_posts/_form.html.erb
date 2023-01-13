@@ -13,23 +13,23 @@
 
   <div class="flex flex-col gap-4">
     <div class="mb-4">
-      <%= form.label :title, class: "block text-gray-700 text-sm font-bold mb-2" %>
-      <%= form.text_field :title, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= form.label :title, class: "rjs-label" %>
+      <%= form.text_field :title, class: "rjs-input-text" %>
     </div>
     <div class="mb-4">
-      <%= form.label :author, class: "block text-gray-700 text-sm font-bold mb-2" %>
-      <%= form.text_field :author, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= form.label :author, class: "rjs-label" %>
+      <%= form.text_field :author, class: "rjs-input-text" %>
     </div>
     <div class="mb-4">
-      <%= form.label :description, class: "block text-gray-700 text-sm font-bold mb-2" %>
-      <%= form.text_area :description, class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+      <%= form.label :description, class: "rjs-label" %>
+      <%= form.text_area :description, class: "rjs-input-text" %>
     </div>
     <div class="mb-4">
-      <%= form.label :image, "Post Image", class: "block text-gray-700 text-sm font-bold mb-2" %>
+      <%= form.label :image, "Post Image", class: "rjs-label" %>
       <%= form.file_field :image %>
     </div>
     <div>
-      <%= form.submit "Submit", class: "bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full" %>
+      <%= form.submit "Submit", class: "rjs-button-submit" %>
     </div>
   </div>
 
